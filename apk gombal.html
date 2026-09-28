@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNTUK BULAN CANTIK❤️</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            overflow: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 35px 25px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 2;
+        }
+
+        .heart {
+            font-size: 60px;
+            animation: heartbeat 1.3s infinite;
+        }
+
+        h1 {
+            color: #ff4f70;
+            margin: 15px 0;
+        }
+
+        .subtitle {
+            color: #777;
+            margin-bottom: 25px;
+        }
+
+        .gombalan {
+            min-height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background: #fff0f3;
+            border-radius: 18px;
+            color: #444;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        button {
+            border: none;
+            padding: 14px 25px;
+            border-radius: 30px;
+            background: #ff4f70;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #ff2f59;
+            transform: scale(1.05);
+        }
+
+        .nama {
+            margin-top: 20px;
+            color: #ff4f70;
+            font-weight: bold;
+        }
+
+        .floating-heart {
+            position: absolute;
+            bottom: -50px;
+            font-size: 25px;
+            animation: naik 7s linear infinite;
+            opacity: 0.7;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        @keyframes naik {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="heart">❤️</div>
+
+        <h1>Untuk BULAN CANTIK</h1>
+
+        <p class="subtitle">
+            Ada sesuatu yang mau disampaikan...
+        </p>
+
+        <div class="gombalan" id="gombalan">
+            Klik tombol di bawah dulu 😉
+        </div>
+
+        <button onclick="gantiGombalan()">
+            💌 Klik disini ya sayang
+        </button>
+
+        <div class="nama">
+            From someone who cares about you ❤️
+        </div>
+
+    </div>
+
+    <script>
+
+        const gombalan = [
+
+            "Kalau kamu adalah tugas kuliah, aku rela mengerjakannya setiap hari. 😆❤️",
+
+            "Kamu tahu nggak kenapa aku suka lihat langit? Karena langit mengingatkanku kalau sesuatu yang indah memang layak untuk dikagumi. ☁️❤️",
+
+            "Katanya rumah adalah tempat untuk pulang. Tapi kalau boleh memilih, senyummu juga terasa seperti tempat yang nyaman. 🥰",
+
+            "Aku nggak butuh Google Maps, karena setiap kali lihat kamu, aku sudah tahu ke mana arah perhatianku. 😌❤️",
+
+            "Kalau senyum kamu bisa jadi notifikasi, mungkin HP-ku bakal bunyi terus. 😂💗",
+
+            "Aku bukan fotografer, tapi aku bisa membayangkan kita punya banyak kenangan indah bersama. 📸❤️",
+
+            "Ada jutaan orang di dunia, tapi entah kenapa perhatian selalu gampang tertuju ke kamu. ❤️",
+
+            "Kalau ada penghargaan untuk orang yang paling bikin hari jadi lebih menyenangkan, mungkin kamu punya peluang besar. 🏆💗",
+
+            "Kamu nggak perlu jadi sempurna. Jadi diri kamu sendiri saja sudah cukup untuk membuat seseorang tersenyum. 😊",
+
+            "Aku punya satu pertanyaan penting: kok bisa seseorang sesederhana kamu punya efek sebesar ini? 😳❤️"
+
+        ];
+
+        function gantiGombalan() {
+
+            const teks = document.getElementById("gombalan");
+
+            const random =
+                Math.floor(Math.random() * gombalan.length);
+
+            teks.innerHTML = gombalan[random];
+
+        }
+
+        // Membuat hati bergerak di background
+        function buatHati() {
+
+            const heart = document.createElement("div");
+
+            heart.classList.add("floating-heart");
+
+            heart.innerHTML = "❤️";
+
+            heart.style.left =
+                Math.random() * 100 + "vw";
+
+            heart.style.animationDuration =
+                (Math.random() * 4 + 4) + "s";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 8000);
+        }
+
+        setInterval(buatHati, 700);
+
+    </script>
+
+</body>
+</html>
